@@ -8,7 +8,7 @@ double[] FillArray(int size, int leftRange, int rightRange)
     Random rand = new Random();
     for (int i = 0; i < size; i++)
     {
-        tempArray[i] = Math.Round(rand.NextDouble(), 3) + rand.Next(leftRange, rightRange);
+        tempArray[i] = Math.Round(rand.NextDouble(), 3) + rand.Next(leftRange, rightRange + 1);
 
     }
     return tempArray;

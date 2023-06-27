@@ -53,7 +53,7 @@ int[] ReadInt(string text)
 
 /////////////////
 int[] size = ReadInt("Укажите размер массива: ");
-int[] rang = ReadInt("Укажите макс. и мин. значения массива через пробел: ");
+int[] rang = ReadInt("Укажите левую и правую границы массива через пробел: ");
 
 bool val = RangValidation(rang[0], rang[1]);
 

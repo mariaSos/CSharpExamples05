@@ -8,7 +8,7 @@ double[] FillArray(int size, int leftRange, int rightRange)
     Random rand = new Random();
     for (int i = 0; i < size; i++)
     {
-        tempArray[i] = rand.NextDouble() + rand.Next(leftRange, rightRange);
+        tempArray[i] = Math.Round(rand.NextDouble(), 3) + rand.Next(leftRange, rightRange);
 
     }
     return tempArray;
@@ -18,7 +18,7 @@ void PrintArray(double[] arrayForPrint)
 {
     System.Console.WriteLine("[" + string.Join(", ", arrayForPrint) + "]");
 }
-//Сумма элементов, стоящих на нечетных позициях
+//Разница между максимальным и минимальным элементами массива
 double DiffMaxMin(double[] array, out double min, out double max)
 {
     max = array[0];
@@ -26,20 +26,17 @@ double DiffMaxMin(double[] array, out double min, out double max)
     double diff = 0;
     for (int i = 1; i < array.Length; i++)
     {
-        if (array[i]<min)
+        if (array[i] < min)
         {
             min = array[i];
         }
         else
         {
-            if (array[i]>max)
+            if (array[i] > max)
             {
                 max = array[i];
             }
-            
-
         }
-
     }
     diff = max - min;
     return diff;
@@ -58,7 +55,5 @@ int[] rang = ReadInt("Укажите левую и правую границы �
 
 double[] array = FillArray(size[0], rang[0], rang[1]);
 PrintArray(array);
-double diff = DiffMaxMin(array, out double min, out double max)
-;
-System.Console.WriteLine(diff);
-System.Console.WriteLine($"Разница = {diff}, мин = {min}, max = {max}");
+double diff = DiffMaxMin(array, out double min, out double max);
+System.Console.WriteLine($"Разница между {max} и {min} равна {diff}");

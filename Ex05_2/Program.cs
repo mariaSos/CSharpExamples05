@@ -19,7 +19,7 @@ void PrintArray(int[] arrayForPrint)
 {
     System.Console.WriteLine("[" + string.Join(", ", arrayForPrint) + "]");
 }
-//Количество четных элементов
+//Сумма элементов, стоящих на нечетных позициях
 int SumOdd(int[] array)
 {
     int result = 0;

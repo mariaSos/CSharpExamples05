@@ -55,9 +55,7 @@ int[] ReadInt(string text)
 int[] size = ReadInt("Укажите размер массива: ");
 int[] rang = ReadInt("Укажите левую и правую границы массива через пробел: ");
 
-bool val = RangValidation(rang[0], rang[1]);
-
-if (val)
+if (RangValidation(rang[0], rang[1]))
 {
     int[] array = FillArray(size[0], rang[0], rang[1]);
     PrintArray(array);
